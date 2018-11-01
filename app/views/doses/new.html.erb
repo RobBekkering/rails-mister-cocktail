@@ -1,2 +1,7 @@
-<h1>Doses#new</h1>
-<p>Find me in app/views/doses/new.html.erb</p>
+<h1>Add an ingredient</h1>
+
+<%= simple_form_for([@cocktail, @dose]) do |cock| %>
+  <%= cock.input :description %>
+  <%= cock.association :ingredient %>
+  <%= cock.submit %>
+<% end %>
