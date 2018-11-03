@@ -1,1 +1,94 @@
 // Specific CSS for your home-page
+
+body {
+  background-color: #fafafa;
+}
+
+h1 {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+  font-size: 80px;
+  color: blue;
+  margin: 0px;
+}
+
+h2 {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+  font-size: 26px;
+  color: #aaa;
+  margin-top: 5px;
+}
+
+.banner {
+  background-color: #fff;
+  height: 100vh;
+  margin-bottom: 20px;
+  position: relative;
+  .flex-banner {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+  }
+  .banner-text {
+    margin-top: 200px;
+    text-align: center;
+    h3 {
+      margin-top: 0px;
+    }
+  }
+  i {
+    position: absolute;
+    bottom: 50px;
+  }
+}
+
+.banner-icon {
+  opacity: 0.1
+}
+
+.cocktail-title {
+  position: absolute;
+  top: 6px;
+  left: 12px;
+  color: #4477C2;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  font-size: 22px;
+}
+
+.cocktail-card {
+  background-color: #fff;
+  height: 200px;
+  position: relative;
+  margin-bottom: 20px;
+  transition: all 200ms;
+}
+
+.cocktail-card:hover {
+  background-color: #4477C2;
+  .cocktail-title {
+    color: #fff;
+  }
+}
+
+.add-cocktail {
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 200ms;
+}
+
+.add-cocktail-icon {
+  color: #4477C2;
+  font-size: 80px;
+  transition: color 200ms;
+}
+
+.add-cocktail:hover {
+  background-color: #4477C2;
+  .add-cocktail-icon {
+    color: #fff;
+  }
+}

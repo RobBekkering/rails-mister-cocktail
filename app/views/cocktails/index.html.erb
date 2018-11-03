@@ -1,9 +1,35 @@
-<h1>Cocktails#index</h1>
+<div class="banner">
+  <div class="flex-banner">
+    <div class="banner-text">
+      <h1>Cocktails</h1>
+      <h2>your cocktail resource</h2>
+    </div>
+  </div>
+  <div class="flex-banner">
+    <i class="fas fa-angle-double-down banner-icon"></i>
+  </div>
+</div>
 
-<ul>
-<% @cocktails.each do |cocktail| %>
-  <li><%= link_to cocktail.name, cocktail_path(cocktail) %></li>
-<% end %>
-</ul>
+<div class="container">
+  <div class="row">
+    <% @cocktails.each do |cocktail| %>
+      <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+        <%= link_to cocktail_path(cocktail) do %>
+          <div class="cocktail-card">
+            <p class="cocktail-title">
+              <%= cocktail.name %>
+            </p>
+          </div>
+        <% end %>
+      </div>
+    <% end %>
 
-<p><%= link_to "add cocktail", new_cocktail_path %></p>
+    <div class="col-xs-12 col-sm-4 col-md-3">
+      <%= link_to new_cocktail_path do %>
+        <div class="cocktail-card add-cocktail">
+            <i class="fas fa-plus-square add-cocktail-icon"></i>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

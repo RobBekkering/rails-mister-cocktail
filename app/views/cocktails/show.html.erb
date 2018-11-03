@@ -6,4 +6,8 @@
   <% end %>
 </ul>
 
-<%= link_to "Add ingredients", new_cocktail_dose_path(@cocktail) %>
+<%= simple_form_for([@cocktail, @dose]) do |cock| %>
+  <%= cock.input :description %>
+  <%= cock.association :ingredient %>
+  <%= cock.submit %>
+<% end %>
