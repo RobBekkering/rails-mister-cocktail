@@ -6,19 +6,6 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-require 'open-uri'
-
-ingredients = JSON.parse(open("https://www.thecocktaildb.com/api/json/v1/1/list.php?i=list").read)
-new_objects = []
-
-ingredients["drinks"].each do |ingredient|
-  new_objects << Ingredient.new(name: ingredient["strIngredient1"])
-end
-
-new_objects.sort_by {|object| object[:name]}.each {|object| object.save }
-
-#------------
-
 names = [
   "Mojito",
   "Margharita",
@@ -48,7 +35,22 @@ names = [
   "Negroni"
 ]
 
+#------------
+
 names.sort.each { |name| Cocktail.create(name: name) }
+
+require 'open-uri'
+
+ingredients = JSON.parse(open("https://www.thecocktaildb.com/api/json/v1/1/list.php?i=list").read)
+new_objects = []
+
+ingredients["drinks"].each do |ingredient|
+  new_objects << Ingredient.new(name: ingredient["strIngredient1"])
+end
+
+ingredients_db = new_objects.sort_by {|object| object[:name]}.each {|object| object.save }
+
+
 
 
 

@@ -7,22 +7,47 @@
 </div>
 
 <div class="flex-box">
-  <div class="dose-list">
-    <div class="dose-flex-box">
+  <div class="list">
+    <div class="flex-box">
       <ul>
         <h2>Ingredients</h2>
         <% @cocktail.doses.each do |dose| %>
-          <li><%= "#{dose.description} - #{dose.ingredient.name}" %></li>
+          <li>
+            <%= "#{dose.description} - #{dose.ingredient.name} " %>
+            <%= link_to "×", dose_path(dose), method: :delete %>
+          </li>
         <% end %>
       </ul>
     </div>
   </div>
 
-  <div class="dose-form">
+  <div class="show-form">
     <%= simple_form_for([@cocktail, @dose]) do |cock| %>
       <%= cock.input :description, input_html: { class: 'input-field' } %>
       <%= cock.association :ingredient, select_class: { class: 'input-field' } %>
       <%= cock.submit "Add Ingredient", class: 'input-button' %>
+    <% end %>
+  </div>
+</div>
+
+<div class="flex-box">
+  <div class="list">
+    <div class="flex-box">
+      <ul>
+        <h2>Reviews</h2>
+        <% @cocktail.reviews.each do |review| %>
+          <div class="review">
+            <li><%= "#{review.content}" %></li>
+          </div>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+
+  <div class="show-form">
+    <%= simple_form_for([@cocktail, @review]) do |cock| %>
+      <%= cock.input :content, label: "Review",input_html: { class: 'input-field' } %>
+      <%= cock.submit "Submit Review", class: 'input-button' %>
     <% end %>
   </div>
 </div>
