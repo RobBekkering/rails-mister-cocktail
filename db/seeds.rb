@@ -9,7 +9,49 @@
 require 'open-uri'
 
 ingredients = JSON.parse(open("https://www.thecocktaildb.com/api/json/v1/1/list.php?i=list").read)
+new_objects = []
 
 ingredients["drinks"].each do |ingredient|
-  Ingredient.create(name: ingredient["strIngredient1"])
+  new_objects << Ingredient.new(name: ingredient["strIngredient1"])
 end
+
+new_objects.sort_by {|object| object[:name]}.each {|object| object.save }
+
+#------------
+
+names = [
+  "Mojito",
+  "Margharita",
+  "Martini",
+  "Old Fashioned",
+  "Moscow Mules",
+  "White Russian",
+  "Apperol Spritz",
+  "Tequila Sunrise",
+  "Whiskey Sour",
+  "Cosmopolitan",
+  "Glühwein",
+  "Sangria",
+  "Sex on the Beach",
+  "Sangria",
+  "Uppercut",
+  "Lime Club",
+  "Kitchen Sink",
+  "The Juliet",
+  "Pitchfork",
+  "Mai Tai",
+  "Amoré",
+  "Lost Lake",
+  "Cry Baby",
+  "Bombilla",
+  "Bicicletta",
+  "Negroni"
+]
+
+names.sort.each { |name| Cocktail.create(name: name) }
+
+
+
+
+
+

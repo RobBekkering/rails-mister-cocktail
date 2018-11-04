@@ -20,9 +20,9 @@
 
   <div class="dose-form">
     <%= simple_form_for([@cocktail, @dose]) do |cock| %>
-      <%= cock.input :description %>
-      <%= cock.association :ingredient %>
-      <%= cock.submit %>
+      <%= cock.input :description, input_html: { class: 'input-field' } %>
+      <%= cock.association :ingredient, select_class: { class: 'input-field' } %>
+      <%= cock.submit "Add Ingredient", class: 'input-button' %>
     <% end %>
   </div>
 </div>

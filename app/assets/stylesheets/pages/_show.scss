@@ -6,6 +6,7 @@ body {
   background-image: url("https://picsum.photos/g/1200/800/?gravity=center");
   background-size: cover;
   height: calc(60vh - 60px);
+  position: relative;
   .banner-overlay {
     display: flex;
     justify-content: space-around;
@@ -41,9 +42,10 @@ body {
       ul {
         margin: 0;
         padding: 0;
+        padding-right: 200px;
         li {
           list-style-type: none;
-          margin: 0px 0px 6px 20px;
+          margin: 3px 0;
         }
       }
     }
@@ -53,8 +55,31 @@ body {
     flex: 1 0 auto;
     padding: 60px 40px;
     background-color: blue;
-  }
-  label {
-    color: #fff;
+    label {
+      font-family: 'Roboto', sans-serif;
+      font-weight: 300;
+      font-size: 32px;
+      color: #fff;
+      margin-bottom: 20px;
+    }
   }
 }
+
+#dose_ingredient_id {
+  background-color: blue;
+  color: #fff;
+  font-size: 22px;
+  border: none;
+  border-radius: 0px !important;
+  box-shadow: none;
+  border: 3px solid #fff;
+  height: 48px;
+}
+
+#dose_ingredient_id:focus {
+  outline: none;
+  box-shadow: none;
+  border: none;
+  border: 3px solid #fff;
+}
+

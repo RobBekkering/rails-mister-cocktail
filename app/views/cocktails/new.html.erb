@@ -1,7 +1,21 @@
-<h1>Cocktails#new</h1>
-<p>Find me in app/views/cocktails/new.html.erb</p>
+<div class="cocktail-banner">
+  <div class="banner-overlay">
+    <div class="banner-text">
+      <h1>New Cocktail</h1>
+    </div>
+  </div>
+</div>
 
-<%= simple_form_for(@cocktail) do |cock| %>
-  <%= cock.input :name %>
-  <%= cock.submit %>
-<% end %>
+<div class="form-flex-box">
+  <div class="new-form">
+    <%= simple_form_for(@cocktail) do |cock| %>
+      <%= cock.input :name, input_html: { class: 'input-field' } %>
+      <%= cock.submit "Add Cocktail", class: 'input-button' %>
+    <% end %>
+  </div>
+</div>
+
+
+
+
+

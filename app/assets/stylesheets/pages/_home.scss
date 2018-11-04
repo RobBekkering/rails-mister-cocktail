@@ -110,16 +110,20 @@ body {
 
 // add cocktail card
 
-.add-cocktail {
+.add-cocktail-card {
+  transition: all 200ms;
+  flex: 1 0 auto;
+  height: 260px;
   background-color: #fff;
   display: flex;
   justify-content: center;
   align-items: center;
-  transition: all 200ms;
+  transition: background-color 200ms;
   .add-cocktail-icon {
     color: blue;
     font-size: 80px;
-    transition: color 200ms;
+    transition: color 300ms;
+    transition: font-size 300ms;
     margin-top: 72px;
     margin-bottom: 73px;
     padding: 0px;
@@ -130,5 +134,6 @@ body {
   background-color: blue;
   .add-cocktail-icon {
     color: #fff;
+    font-size: 100px;
   }
 }
