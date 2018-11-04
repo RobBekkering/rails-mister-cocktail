@@ -1,13 +1,29 @@
-<h1><%= @cocktail.name %></h1>
+<div class="cocktail-banner">
+  <div class="banner-overlay">
+    <div class="banner-text">
+      <h1><%= @cocktail.name %></h1>
+    </div>
+  </div>
+</div>
 
-<ul>
-  <% @cocktail.doses.each do |dose| %>
-    <li><%= "#{dose.ingredient.name} - #{dose.description}" %></li>
-  <% end %>
-</ul>
+<div class="flex-box">
+  <div class="dose-list">
+    <div class="dose-flex-box">
+      <ul>
+        <h2>Ingredients</h2>
+        <% @cocktail.doses.each do |dose| %>
+          <li><%= "#{dose.description} - #{dose.ingredient.name}" %></li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
 
-<%= simple_form_for([@cocktail, @dose]) do |cock| %>
-  <%= cock.input :description %>
-  <%= cock.association :ingredient %>
-  <%= cock.submit %>
-<% end %>
+  <div class="dose-form">
+    <%= simple_form_for([@cocktail, @dose]) do |cock| %>
+      <%= cock.input :description %>
+      <%= cock.association :ingredient %>
+      <%= cock.submit %>
+    <% end %>
+  </div>
+</div>
+

@@ -1,0 +1,60 @@
+body {
+  background-color: #fff;
+}
+
+.cocktail-banner {
+  background-image: url("https://picsum.photos/g/1200/800/?gravity=center");
+  background-size: cover;
+  height: calc(60vh - 60px);
+  .banner-overlay {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: absolute;
+    height: calc(60vh - 60px);
+    width: 100%;
+    background-color: rgba(255,255,255,0.9);
+    .banner-text {
+      text-align: center;
+    }
+  }
+}
+
+.flex-box {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  .dose-list {
+    flex: 1 0 auto;
+    padding: 40px;
+    .dose-flex-box {
+      display: flex;
+      justify-content: space-around;
+      h2 {
+        margin-bottom: 12px;
+        margin-top: 10px;
+        font-family: 'Roboto', sans-serif;
+        font-weight: 300;
+        font-size: 32px;
+        color: #999;
+      }
+      ul {
+        margin: 0;
+        padding: 0;
+        li {
+          list-style-type: none;
+          margin: 0px 0px 6px 20px;
+        }
+      }
+    }
+  }
+  .dose-form {
+    min-height: 350px;
+    flex: 1 0 auto;
+    padding: 60px 40px;
+    background-color: blue;
+  }
+  label {
+    color: #fff;
+  }
+}

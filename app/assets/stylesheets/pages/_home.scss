@@ -1,76 +1,114 @@
 // Specific CSS for your home-page
 
-body {
-  background-color: #fafafa;
-}
-
 h1 {
   font-family: 'Roboto', sans-serif;
   font-weight: 700;
   font-size: 80px;
   color: blue;
-  margin: 0px;
+  padding: 0px;
 }
 
-h2 {
-  font-family: 'Roboto', sans-serif;
-  font-weight: 300;
-  font-size: 26px;
-  color: #aaa;
-  margin-top: 5px;
+a {
+  text-decoration: none !important;
 }
+
+p {
+  margin-bottom: 0px;
+}
+
+body {
+  background-color: #eee;
+}
+
+.no-padding {
+  padding: 0;
+}
+
+.no-margin {
+  margin: 0;
+}
+
+.container {
+  width: 100%;
+}
+
+// banner
 
 .banner {
-  background-color: #fff;
+  background-image: url("https://picsum.photos/g/1200/800/?gravity=center");
+  background-size: cover;
   height: 100vh;
-  margin-bottom: 20px;
-  position: relative;
-  .flex-banner {
+  .banner-overlay {
     display: flex;
-    align-items: center;
     justify-content: space-around;
-  }
-  .banner-text {
-    margin-top: 200px;
-    text-align: center;
-    h3 {
-      margin-top: 0px;
+    align-items: center;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(255,255,255,0.9);
+    .banner-text {
+      text-align: center;
+      h3 {
+        margin-top: 10px;
+        font-family: 'Roboto', sans-serif;
+        font-weight: 300;
+        font-size: 22px;
+        color: #999;
+      }
+    }
+    i {
+      position: absolute;
+      bottom: 60px;
+      padding: 12px 16px;
+      opacity: 0.5;
+      border: 2px solid #bbb;
+      border-radius: 50%;
+      color: #bbb;
     }
   }
-  i {
-    position: absolute;
-    bottom: 50px;
-  }
 }
 
-.banner-icon {
-  opacity: 0.1
-}
-
-.cocktail-title {
-  position: absolute;
-  top: 6px;
-  left: 12px;
-  color: #4477C2;
-  font-family: 'Roboto', sans-serif;
-  font-weight: 500;
-  font-size: 22px;
-}
+// cocktail card
 
 .cocktail-card {
-  background-color: #fff;
-  height: 200px;
-  position: relative;
-  margin-bottom: 20px;
+  background-image: url("https://picsum.photos/150/200/?random?gravity=east");
+  background-size: cover;
   transition: all 200ms;
+  flex: 1 0 auto;
+  height: 260px;
+  .cocktail-card-overlay {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(255,255,255,1);
+    transition: all 300ms;
+    .cocktail-title {
+      font-family: 'Roboto', sans-serif;
+      font-weight: 500;
+      font-size: 22px;
+      color: blue;
+      padding: 8px 0px;
+      transition: all 300ms;
+      border-bottom: 4px solid blue;
+    }
+  }
 }
 
 .cocktail-card:hover {
-  background-color: #4477C2;
-  .cocktail-title {
-    color: #fff;
+  .cocktail-card-overlay{
+  background-color: rgba(255,255,255,0);
+    .cocktail-title {
+      padding: 8px 20px;
+      background-color: blue;
+      color: #fff;
+    }
   }
 }
+
+// add cocktail card
 
 .add-cocktail {
   background-color: #fff;
@@ -78,16 +116,18 @@ h2 {
   justify-content: center;
   align-items: center;
   transition: all 200ms;
-}
-
-.add-cocktail-icon {
-  color: #4477C2;
-  font-size: 80px;
-  transition: color 200ms;
+  .add-cocktail-icon {
+    color: blue;
+    font-size: 80px;
+    transition: color 200ms;
+    margin-top: 72px;
+    margin-bottom: 73px;
+    padding: 0px;
+  }
 }
 
 .add-cocktail:hover {
-  background-color: #4477C2;
+  background-color: blue;
   .add-cocktail-icon {
     color: #fff;
   }
