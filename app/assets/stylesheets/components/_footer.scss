@@ -1,0 +1,16 @@
+.footer {
+  height: 50vh;
+  border-top: 3px solid blue;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  .footer-icon {
+    font-size: 40px;
+    color: #eee;
+    transition: color 200ms;
+  }
+}
+
+.footer-icon:hover {
+  color: blue;
+}
